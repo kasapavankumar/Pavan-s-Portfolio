@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Josefin+Sans&family=Libre+Baskerville&family=Playfair+Display&family=Reem+Kufi+Ink&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+*{
+    box-sizing: border-box;
+    color: white;
+    font-family: sans-serif;
+
+}
+body{
+        background: linear-gradient(180deg,#2e0953,#61097c,#624570);
+        background-size: 200% 200%;
+        animation: gradient-animation 18s ease infinite;
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 15px;
+        
+}
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 100%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+}
+.nav-item{
+    list-style: none;
+}
+.nav-link{
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-link:hover{
+    outline: 2px solid white;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+}
+/*home section */
+.home-section{
+    display: flex;
+    justify-content: space-around;
+    outline: 2px dashed rgb(40, 40, 67);
+    margin-top: 30px;
+    width: 88.5vw;
+}
+.home-left{
+    display: inline;
+    right: 50px;
+    margin-right: 10px;
+    padding-right: 20px;
+}
+.home-img{
+    height: 400px;
+    
+}
+.home-h1{
+    font-size: 2.2rem;
+    padding-top: 50px;
+}
+.home-p{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* about section */
+.about-p{
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: left;
+    line-height: 2;
+}
+/*.about-h1 h1{
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 5;
+    color: yellow;
+}
+/*.about-right{
+    filter: drop-shadow(5px 0px 15px #6d6dc6);
+}*/
+.about-section{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+.about-left{
+    width: 500px;
+}
+.about-right img{
+    height:300px;
+}
+.btn{
+    color: black;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn:hover{
+    outline: 1px solid white;
+    background-color: black;
+    color: white;
+}
+.btn:active{
+    transform: scale(1.1);
+}
+/* education section*/
+.education-section{
+    margin-top: 30px;
+}
+.edu-box{
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    margin-left: 0;
+}
+.edu-details{
+    outline: 2px dashed rgb(40, 40, 67);
+    padding: 20px;
+    width: 28.3vw;
+    text-align: center;
+    margin-left: 0;
+    line-height: 1;
+}
+.edu-h1{
+    margin-left:10px ;
+}
+.edu-details> h3{
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+/* skills */
+.skill-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.skill-box img{
+    height: 120px;
+    width: 120px;
+    outline: 2px dashed rgb(40, 40, 67);
+    padding: 10px;
+}
+.skill-box{
+    width: 80vw;
+    margin-left: 100px;
+}
+/* project section */
+
+.accordian{
+    outline: 2px dashed rgb(40, 40, 67);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+.arrow{
+    display: flex;
+    justify-content: space-between;
+}
+.accordian input{
+    display: none;
+}
+.accordian label{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.content{
+    line-height: 1.8;
+    font-size: 1.1rem;
+    height: 0;
+    overflow: hidden;
+    transition: height 5s ease;
+}
+/* main operation */
+.accordian > input[type="checkbox"]:checked + label + .content{
+    height: auto;
+    overflow: visible;
+    padding: 5px 5px 10px;
+}
+/* contact section */
+.contact-details{
+    display: flex;
+    justify-content: space-between;
+}
+.right-details{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 50px;
+    align-items: center;
+    gap: 20px;
+}
+.contact-logo{
+    padding-bottom: 10px;
+    height: 120px;
+    width: 120px;
+}
+
+/* side bar*/
+@media (max-width:425px){
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 65px;
+        gap: 0;
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+        width: 300px;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: 0.3s;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        right:0;
+    }
+}
+@media (max-width:425px) {
+    .nav-menu{
+        width: 100%;
+        position: fixed;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+@media (max-width:1024px){
+    .nav-container{
+        width: 80vw;
+    }
+    .skill-box{
+        width: 80vw;
+        margin-left: 60px;
+    }
+    .nav-menu{
+        gap: 10px;
+    }
+    .nav-menu{
+        margin-left: 100px;
+    }
+}
+@media (max-width:768px){
+    body{
+        margin-left: 40px;
+    }
+    .nav-container{
+        width: 100%;
+    }
+    .nav-menu{
+        
+        gap: 10px;
+        margin-left: 0;
+    }
+    /* home section */
+    .nav-container{
+        width: 100vw;
+    }
+    .home-section{
+        width: 100vw;
+    }
+    .home-img{
+        height: 300px;
+    }
+    .home-h1{
+        font-size: 1.2rem;
+    }
+    .about-right img{
+        height: 200px;
+    }
+    .about-section{
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+    }
+    .education-section{
+        width: 100vw;
+    }
+    .edu-box{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .project-section{
+        width: 100vw;
+    }
+    .contact-section{
+        width: 100vw;
+    }
+}
+@media (max-width:450px){
+    body{
+        margin-right: 40px;
+    }
+    .nav-container{
+        width: 150vw;
+    }
+    .nav-menu{
+        padding-left: 0;
+        margin-left: 10px;
+    }
+    .nav-container h1{
+        font-size: 1rem;
+    }
+    .nav-item{
+        font-size: 0.8rem;
+    }
+    /* home section*/
+    .home-section{
+        width: 150vw;
+    }
+    .home-img{
+        height: 200px;
+    }
+    .home-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .home-h1{
+        padding-top: 0;
+    }
+    /*about section*/
+    .about-section{
+        width: 150vw;
+    }
+    .about-h1{
+        font-size: 0.6rem;
+        font-weight: 700;
+    }
+    /* education*/
+    .edu-container{
+        width: 150vw;
+    }
+    .edu-box{
+       width: 100%;
+    }
+    .edu-details{
+        width: 100%;
+    }
+    /* skills*/
+    .skill-container{
+        width: 160vw;
+    }
+    .skill-box{
+        margin-left: 0;
+    }
+    /*project */
+    .project-accordian{
+        width: 150vw;
+    }
+    /*contact */
+    .contact-details{
+        width: 150vw;
+    }
+    .contact-logo{
+        display:  none;
+    }
+}
+@media (max-width:320px){
+    .about-section{
+        display: block;
+    }
+    .about-right img{
+        padding-left: 100px;
+    }
+    .edu-box{
+        display: block;
+    }
+    .skill-box img{
+        height: 80px;
+        width: 80px;
+    }
+    .skill-box{
+        margin-left: 10px;
+    }
+    .right-details{
+        font-size: 30px;
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .home-h1{
+        font-size: 1.2rem;
+    }
+    .home-img{
+        max-height: 300px;
+    }
+    .nav-container{
+        width: 80vw;
+    }
+    .home-section{
+        max-width: 90vw;
+    }
+}
